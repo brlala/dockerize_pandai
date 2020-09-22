@@ -1,0 +1,23 @@
+{
+  "logging_level": "DEBUG",
+  "port": 4430,
+
+  "abbrs": {
+    "livechatdev": {
+      "mongo_db_user": "admin",
+      "mongo_db_password": "password",
+      "mongo_db_uri": "mongodb://mongo:27017",
+      "mongo_db_database_dimension": "livechatdev",
+      "mongo_db_database_fact": "livechatdev",
+      "mongo_db_collection_bot": "bot",
+      "mongo_db_collection_bot_user": "bot_user",
+      "mongo_db_collection_atomic_statistics": "atomic_statistics",
+      "mongo_db_collection_broadcast": "broadcast",
+      "mongo_db_collection_message": "message",
+      "mongo_db_collection_session": "session",
+
+      "monitor_url_endpoint": "https://monitor.client.pand.ai/platform/monitor",
+      "load_url_endpoint": "https://localhost:9006/load"
+    }
+  }
+}

@@ -1,0 +1,50 @@
+version: '3.8'
+
+services:
+  gateway:
+    image: python:3.8-slim
+    environment:
+      TZ: Asia/Singapore
+    volumes:
+      - ./pandai-gateway:/app
+    ports:
+      - 4430:4430
+    working_dir: /app
+    command: sh -c "
+      chmod u+x ./entrypoint.sh
+      && ./entrypoint.sh ${BITBUCKET_USERNAME} ${BITBUCKET_PASSWORD}
+      && sleep 3
+      && python app.py 0
+      "
+    depends_on:
+      - rabbitmq
+      - mongo
+      - redis
+
+  rabbitmq:
+    image: rabbitmq:3
+    container_name: rabbitmq
+    environment:
+      TZ: Asia/Singapore
+    ports:
+      - 5672:5672
+
+  redis:
+    image: redis:6
+    container_name: redis
+    environment:
+      TZ: Asia/Singapore
+    ports:
+      - 6379:6379
+
+  mongo:
+    image: mongo:4
+    container_name: mongo
+    volumes:
+      - ./mongo/data/db:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: password
+      TZ: Asia/Singapore
+    ports:
+      - 27017:27017
