@@ -1,4 +1,4 @@
-FILE="/app/app.py"
+FILE="/app/package.json"
 USERNAME=$1
 PASSWORD=$2
 if [ -f "$FILE" ]; then
@@ -7,13 +7,10 @@ if [ -f "$FILE" ]; then
 else
   ### Control will jump here if doesn't exist ###
   echo "Repo does not exist, skipping steps"
-  apt-get update
-  apt-get install -y git python-virtualenv gcc g++ unixodbc unixodbc-dev
   git init
-  git remote add origin https://"$USERNAME":"$PASSWORD"@bitbucket.org/pandaipteltd/admin-portal-backend.git
+  git remote add origin https://"$USERNAME":"$PASSWORD"@bitbucket.org/pandaipteltd/admin-portal-frontend.git
   git pull origin master
   git reset --hard HEAD  # Required when the versioned files existed in path before "git init" of this repo.
   git checkout master
-  pip install -r requirements.txt
-  python startup.py
+  apt-get install make gcc*
 fi

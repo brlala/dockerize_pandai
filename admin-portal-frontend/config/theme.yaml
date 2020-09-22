@@ -1,0 +1,69 @@
+# This section modified the main colors of the sidebar
+# NOTE: must use hex code for main colors
+main:
+  background: "#414141"
+  secondary: "#7c7c7c"
+  text: "#fff"
+
+# This section modified the colors of the button's background and texts
+buttonColors:
+  cancel:
+    background: "#ffb347"
+    text: "#ffffff"
+  create:
+    background: "#449afe"
+    text: "#ffffff"
+  default:
+    background: "#F4F5F7"
+    text: "#172B4D"
+  delete:
+    background: "#ff6961"
+    text: "#ffffff"
+  disabled:
+    background: "#eee"
+    text: "#A5ADBA"
+  ok:
+    background: "#77dd77"
+    text: "#ffffff"
+  save:
+    background: "#2d98f9"
+    text: "#ffffff"
+  submit:
+    background: "#529b69"
+    text: "#ffffff"
+
+# This section modifies the color used by certain elements
+colors:
+  black: "#8C9CB8"
+  blue: "#0747A6"
+  blueBG: "#B3D4FF"
+  boxShadow: "rgba(9, 30, 66, 0.25)"
+  customFunction: "#6554C0"
+  dashboard:
+    bar:
+      fill: "#FF0100"
+    fill: "#000066"
+  flow: "#00875A"
+  flowComponent:
+    attribute:
+      background: "#0084FF"
+      text: "#fff"
+  grayBG: "rgba(9, 30, 66, 0.04)"
+  hover: "rgba(9, 30, 66, 0.04)"
+  listBorder: "rgba(9, 30, 66, 0.08)"
+  subTitle: "rgba(9, 30, 66, 0.42)"
+  text: "#6B778C"
+  title: "#344563"
+  userInput: "#00B8D9"
+
+# Sidebar default colors
+sideBar:
+  listItem:
+    default:
+      textColor: '#334967'
+      hoverColor: '#000'
+    active:
+      borderColor: '#4286f3'
+      # this will be the color accents of the landing page ribbons
+      textColor: '#4286f3'
+  backgroundColor: '#fff'

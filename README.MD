@@ -20,4 +20,11 @@ portal-backend
    - BOT_ABBREVIATION
 Requirements:
    - create a portal_user with startup.py script
+
+portal-frontend
+/configs
+.env file
 ```
+
+# TODO:
+- backend startup.py to take in default arguments
