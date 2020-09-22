@@ -345,6 +345,3 @@ pyvenv.cfg
 .venv
 pip-selfcheck.json
 mongo
-.admin-portal-backend
-.admin-portal-frontend
-.pandai-gateway

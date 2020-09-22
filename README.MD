@@ -19,7 +19,7 @@ portal-backend
    - MONGO_DB_URI
    - BOT_ABBREVIATION
 Requirements:
-   - create a portal_user with startup.py script
+   - create portal_user, portal_group, access control with startup.py script
 
 portal-frontend
 /configs
