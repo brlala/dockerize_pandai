@@ -6,7 +6,6 @@ if [ -f "$FILE" ]; then
   echo "Repo exist, skipping steps"
 else
   ### Control will jump here if doesn't exist ###
-  echo "Repo does not exist, skipping steps"
   apt-get update
   apt-get install -y git python-virtualenv gcc g++ unixodbc unixodbc-dev
   git init

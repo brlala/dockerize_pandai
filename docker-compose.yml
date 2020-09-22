@@ -75,32 +75,34 @@ services:
       && sleep 3
       && yarn install
       && yarn start"
-#  portal-backend:
-#    image: python:3.8-slim
-#    environment:
-#      - TZ=Asia/Singapore
-#    container_name: portal-backend
-#    volumes:
-#      - ./admin-portal-backend:/app
-#    depends_on:
-#      - mongo
-#    ports:
-#      - 5000:5000
-#    working_dir: /app
-#    command: sh -c "
-#      chmod u+x ./entrypoint.sh
-#      && ./entrypoint.sh ${BITBUCKET_USERNAME} ${BITBUCKET_PASSWORD}
-#      && sleep 3
-#      && gunicorn -w 1 --threads 12 app:app -b 0.0.0.0:5000
-#      "
-#  mongo:
-#    image: mongo:4
-#    container_name: mongo
-#    volumes:
-#      - ./mongo/data/db:/data/db
-#    environment:
-#      MONGO_INITDB_ROOT_USERNAME: admin
-#      MONGO_INITDB_ROOT_PASSWORD: password
-#      TZ: Asia/Singapore
-#    ports:
-#      - 27017:27017
+    stdin_open: true
+
+  portal-backend:
+    image: python:3.8-slim
+    environment:
+      - TZ=Asia/Singapore
+    container_name: portal-backend
+    volumes:
+      - ./admin-portal-backend:/app
+    depends_on:
+      - mongo
+    ports:
+      - 5000:5000
+    working_dir: /app
+    command: sh -c "
+      chmod u+x ./entrypoint.sh
+      && ./entrypoint.sh ${BITBUCKET_USERNAME} ${BITBUCKET_PASSWORD}
+      && sleep 3
+      && gunicorn -w 1 --threads 12 app:app -b 0.0.0.0:5000
+      "
+  mongo:
+    image: mongo:4
+    container_name: mongo
+    volumes:
+      - ./mongo/data/db:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: password
+      TZ: Asia/Singapore
+    ports:
+      - 27017:27017
