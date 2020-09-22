@@ -6,5 +6,18 @@ BITBUCKET_PASSWORD=
 
 Replace the files with the correct configuration
 ```
-pandai-gateway/configs/config.json
+pandai-gateway
+/configs/config.json
+   - mongo_db_user
+   - mongo_db_password
+   - mongo_db_uri
+   - mongo_db_database_dimension
+   - mongo_db_database_fact
+
+portal-backend
+/configs/config.json
+   - MONGO_DB_URI
+   - BOT_ABBREVIATION
+Requirements:
+   - create a portal_user with startup.py script
 ```
